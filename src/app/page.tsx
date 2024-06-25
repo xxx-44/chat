@@ -1,6 +1,8 @@
+'use client';
 import Chat from '@/components/Chat';
 import Sidebar from '@/components/Sidebar';
-import Image from 'next/image';
+import { useAppContext } from '@/context/AppContext';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
 	return (
