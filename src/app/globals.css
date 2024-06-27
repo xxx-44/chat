@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	background-color: #57668d;
+@layer base {
+	.color1 {
+		--bg: #57668d;
+		--bg-main: #6b7280;
+		--bg-sub: #64748b;
+		--bg-sub-hover: #94a3b8;
+		--bg-chat-1: white;
+		--bg-chat-2: #7dd3fc;
+		--txt-main: black;
+		--txt-sub: #f1f5f9;
+		--btn-hover: #64748b;
+		--btn: #475569;
+	}
+	.color2 {
+		--bg: ##4c1d95;
+		--bg-main: #6b7280;
+		--bg-sub: #8b5cf6;
+		--bg-sub-hover: #94a3b8;
+		--bg-chat-1: white;
+		--bg-chat-2: ##a78bfa;
+		--txt-main: black;
+		--txt-sub: #f1f5f9;
+		--btn-hover: #64748b;
+		--btn: #475569;
+	}
 }

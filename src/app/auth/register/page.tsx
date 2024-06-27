@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { auth } from '../../../../firebase';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAppContext } from '@/context/AppContext';
 
 type Inputs = {
 	email: string;
@@ -14,6 +15,7 @@ type Inputs = {
 
 const Register = () => {
 	const router = useRouter();
+	const { theme } = useAppContext();
 
 	const {
 		register,
@@ -37,7 +39,7 @@ const Register = () => {
 	};
 
 	return (
-		<div className='h-screen flex flex-col items-center justify-center'>
+		<div className={`${theme} color1 bg-bgC h-screen flex flex-col items-center justify-center`}>
 			<form onSubmit={handleSubmit(onSubmit)} className='bg-white p-8 rounded-lg shadow-md w-96'>
 				<h1 className='text-2xl mb-4 font-medium text-gray-700'>新規登録</h1>
 				<div className='mb-4'>
@@ -72,7 +74,7 @@ const Register = () => {
 				</div>
 
 				<div className='flex justify-end'>
-					<button type='submit' className='bg-blue-500 text-white rounded py-2 font-bold px-4 hover:bg-blue-700'>
+					<button type='submit' className='bg-btnC text-white rounded py-2 font-bold px-4 hover:bg-btnCh'>
 						新規登録
 					</button>
 				</div>

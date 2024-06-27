@@ -17,6 +17,9 @@ type AppContextType = {
 	setSelectedRoom: React.Dispatch<React.SetStateAction<string | null>>;
 	selectedRoomName: string | null;
 	setSelectedRoomName: React.Dispatch<React.SetStateAction<string | null>>;
+	themeColors: string[] | null;
+	theme: string | null;
+	setTheme: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 const defaultContextDara = {
@@ -27,6 +30,9 @@ const defaultContextDara = {
 	setSelectedRoom: () => {},
 	selectedRoomName: null,
 	setSelectedRoomName: () => {},
+	themeColors: [],
+	theme: null,
+	setTheme: () => {},
 };
 
 const AppContext = createContext<AppContextType>(defaultContextDara);
@@ -36,6 +42,8 @@ export function AppProvider({ children }: AppProviderProps) {
 	const [userId, setUserId] = useState<string | null>(null);
 	const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
 	const [selectedRoomName, setSelectedRoomName] = useState<string | null>(null);
+	const themeColors = ['color1', 'color2'];
+	const [theme, setTheme] = useState<string | null>(themeColors[0]);
 	const router = useRouter();
 
 	useEffect(() => {
@@ -55,7 +63,18 @@ export function AppProvider({ children }: AppProviderProps) {
 
 	return (
 		<AppContext.Provider
-			value={{ user, setUser, userId, selectedRoom, setSelectedRoom, selectedRoomName, setSelectedRoomName }}
+			value={{
+				user,
+				setUser,
+				userId,
+				selectedRoom,
+				setSelectedRoom,
+				selectedRoomName,
+				setSelectedRoomName,
+				themeColors,
+				theme,
+				setTheme,
+			}}
 		>
 			{children}
 		</AppContext.Provider>

@@ -126,9 +126,9 @@ const Chat = () => {
 	};
 
 	return (
-		<div className='bg-gray-500 h-full p-4 flex flex-col'>
+		<div className='bg-bgCm h-full p-4 flex flex-col'>
 			<div className='flex justify-between'>
-				<h1 className='text-2xl text-white font-semibold mb-4'>{selectedRoomName}</h1>
+				<h1 className='text-2xl text-txtCs font-semibold mb-4'>{selectedRoomName}</h1>
 				{selectedRoomName && (
 					<div className='flex items-center mb-4'>
 						<button
@@ -155,14 +155,14 @@ const Chat = () => {
 				)}
 			</div>
 
-			<div className='flex-grow overflow-y-auto mb-4' ref={scroolDiv}>
+			<div className='flex-grow overflow-y-auto mb-4 text-txtCm' ref={scroolDiv}>
 				{messages.map((message, index) => (
 					<div key={index} className={message.sender === 'user' ? 'text-right' : 'text-left'}>
 						<div
 							className={
 								message.sender === 'user'
-									? 'bg-white px-4 py-2 rounded-xl mb-2 inline-block'
-									: 'bg-blue-300 px-4 py-2 rounded-xl mb-2 inline-block'
+									? 'bg-chat1 px-4 py-2 rounded-xl mb-2 inline-block'
+									: 'bg-chat2 px-4 py-2 rounded-xl mb-2 inline-block'
 							}
 						>
 							<ReactMarkdown>{message.text}</ReactMarkdown>
@@ -187,7 +187,7 @@ const Chat = () => {
 				/>
 				{/* <button className='absolute right-0 px-5 rounded items-center flex inset-y-0 bg-slate-400'> */}
 				<button
-					className='bg-slate-400 px-5 rounded ml-4 text-white hover:bg-slate-600 duration-150 cursor-pointer'
+					className='bg-btnC px-5 rounded ml-4 text-txtCs hover:bg-btnCh duration-150 cursor-pointer'
 					onClick={() => sendMessage()}
 				>
 					<FaPaperPlane />
