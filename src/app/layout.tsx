@@ -3,7 +3,7 @@ import './globals.css';
 import { AppProvider } from '@/context/AppContext';
 
 export const metadata: Metadata = {
-	title: 'ChstGPT App',
+	title: 'GeminiAPI App',
 	description: 'ohayou',
 };
 
